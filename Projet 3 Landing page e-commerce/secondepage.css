@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.icons_and_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.logo {
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.icons ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons svg {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* La seconde barre de  naviguation  */
+
+.seconde_nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 12%;
+}
+
+.seconde_nav li a {
+  color: #111;
+  font-size: 0.7rem;
+}
+
+.seconde_nav li a:hover {
+  color: #9eddea;
+}
+/* La troisieme barre  */
+
+.troisieme_barre ul {
+  text-decoration: none;
+  display: flex;
+  color: #eee;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.troisieme_barre a {
+  color: #111111;
+}
+
+
+
+
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 11px;
+    border: 2px solid red;
+    padding: 3%;
+}
+    
+
+.div {
+border: 2px solid green;
+height: auto;
+width: 100%;
+}
+
+.div svg {
+  width: 100%;
+  height: auto;
+}
+
+.div p {
+  line-height: 3rem;
+}
+ .button-add-shop {
+ background: #111111;
+ color: #eee;
+ cursor: pointer;
+ width: 80%;
+ transition: background 0.3s color 0.3s;
+ border: none;
+ height: 40px;
+}
+.button-add-shop:hover {
+background: #111111b0;
+  color:rgb(220, 220, 67);
+}
+
+
+
+.div3 {
+  padding-left:  3%;
+}
+.div4 {
+    grid-column: span 2 / span 2;
+    border: 2px solid purple;
+}
+
+.div5 {
+    grid-column: span 2 / span 2;
+    grid-row-start: 3;
+}
+      
+    

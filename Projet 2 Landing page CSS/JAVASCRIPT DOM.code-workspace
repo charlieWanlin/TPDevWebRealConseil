@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": "../JAVASCRIPT DOM"
+	},
+	{
+		"path": "../Projet Fil Rouge"
+	},
+	{
+		"path": "."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Exercice Site web"
+  }
+}
