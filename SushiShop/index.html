@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lil'Sushi - Restaurant</title>
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <body
+    class="bg-linear-to-r from-primary to-secondary min-h-screen overflow-x-hidden"
+  >
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-16 py-6">
+      <!-- Logo et nom du restaurant -->
+      <div class="flex items-center gap-3">
+        <img src="./assets/img/favicon 1.png" alt="logo" class="w-8 h-8" />
+        <h1 class="text-2xl font-bold text-black">Lil'Sushi</h1>
+      </div>
+
+      <!-- Menu de navigation -->
+      <ul class="flex items-center gap-12 text-lg">
+        <li><a href="./index.html" class="text-orange-400 font-medium">Accueil</a></li>
+        <li>
+          <a
+            href="#about"
+            class="text-black font-medium hover:text-orange-400 transition"
+            >A propos</a
+          >
+        </li>
+        <li>
+          <a
+            href="./menu.html"
+            class="text-black font-medium hover:text-orange-400 transition"
+            >Menu</a
+          >
+        </li>
+        <li>
+          <a
+            href="./reservation.html"
+            class="text-black font-medium hover:text-orange-400 transition"
+            >Reservation</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Section Hero -->
+    <section class="flex items-center justify-between px-16 py-12 relative">
+      <!-- Décoration sushi en haut à gauche -->
+      <div class="absolute top-0 left-8">
+        <img src="./assets/img/leaf-branch-3.png" alt="branch decoration" class="w-24 h-24" />
+      </div>
+
+      <!-- Contenu texte à gauche -->
+      <div class=" content-leftflex-1 max-w-xl ml-40 mt-20 animate-slide-fade-in-left" >
+        <h2 class="text-7xl font-bold text-black leading-tight mb-1">
+          Bienvenue chez 
+        </h2>
+
+        <!-- Icône sushi + titre -->
+        <div class="flex items-center gap-2 mb-12">
+          <div
+            class="w-24 h-24 bg-black rounded-full flex items-center justify-center"
+          >
+            <img
+              src="./assets/img/favicon 1.png"
+              alt="sushi icon"
+              class="w-12 h-12"
+            />
+          </div>
+          <h3 class="text-6xl font-bold text-black">Lil'Sushi</h3>
+        </div>
+
+        <!-- Description -->
+        <p class="text-gray-600 text-lg mb-10 leading-relaxed max-w-md">
+          Degustez les meilleurs sushis de la ville, préparés avec des ingrédients frais et une passion 
+        </p>
+
+        <!-- Bouton Commander -->
+        <button
+          class="commander bg-orange-600 hover:bg-orange-700 cursor-pointer text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 transition shadow-lg"
+        >
+          Commander
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path
+              d="M10 0L8.59 1.41L16.17 9H0V11H16.17L8.59 18.59L10 20L20 10L10 0Z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Image des sushis à droite -->
+      <div class="flex-1 flex justify-end">
+        <img
+          src="./assets/img/hero-img.png"
+          alt="Sushi platter with chopsticks"
+          class="w-full max-w-2xl object-contain animate-slide-fade-in-right"
+        />
+      </div>
+
+      <!-- Décoration feuilles en bas à droite -->
+      <div class="absolute bottom-0 right-12">
+        <img src="./assets/img/leaf-branch-4.png" alt="leaf decoration" class="w-32 h-32" />
+      </div>
+    </section>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

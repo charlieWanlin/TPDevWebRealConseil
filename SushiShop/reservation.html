@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Réservation - Lil'Sushi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#f5e6d3] h-screen overflow-hidden flex flex-col">
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-16 py-5 shrink-0">
+      <!-- Logo et nom du restaurant -->
+      <div class="flex items-center gap-3">
+        <img src="./assets/img/favicon 1.png" alt="logo" class="w-8 h-8" />
+        <h1 class="text-2xl font-bold text-black">Lil'Sushi</h1>
+      </div>
+
+      <!-- Conteneur pour menu et panier -->
+      <div class="flex items-center gap-8">
+        <!-- Menu de navigation -->
+        <ul class="flex items-center gap-10 text-lg">
+          <li>
+            <a
+              href="./index.html"
+              class="text-black font-medium hover:text-orange-400 transition cursor-pointer"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="text-black font-medium hover:text-orange-400 transition cursor-pointer"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="./menu.html"
+              class="text-black font-medium hover:text-orange-400 transition cursor-pointer"
+              >Menu</a
+            >
+          </li>
+          <li>
+            <a
+              href="./reservation.html"
+              class="text-orange-400 font-medium hover:text-orange-400 transition cursor-pointer"
+              >Reservation</a
+            >
+          </li>
+        </ul>
+
+        <!-- Panier -->
+        <div class="logo-panier relative">
+          <button
+            class="relative p-2 hover:opacity-80 transition cursor-pointer"
+          >
+            <svg
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#8B7355"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              ></path>
+            </svg>
+            <!-- Badge nombre d'articles -->
+            <span
+              class="badge absolute -top-1 -right-1 bg-orange-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-semibold"
+              >0</span
+            >
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-hidden flex items-center py-6">
+      <div class="max-w-7xl mx-auto px-12 w-full">
+        <div class="grid grid-cols-2 gap-12 items-center">
+          <!-- Left Section - Table Selection -->
+          <div class="flex flex-col">
+            <h1 class="text-5xl font-bold mb-5">Réservez Votre Table</h1>
+
+            <!-- Calendar Icon -->
+            <div
+              class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center mb-5"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <rect
+                  x="3"
+                  y="4"
+                  width="18"
+                  height="18"
+                  rx="2"
+                  ry="2"
+                  stroke-width="2"
+                ></rect>
+                <line x1="16" y1="2" x2="16" y2="6" stroke-width="2"></line>
+                <line x1="8" y1="2" x2="8" y2="6" stroke-width="2"></line>
+                <line x1="3" y1="10" x2="21" y2="10" stroke-width="2"></line>
+              </svg>
+            </div>
+
+            <!-- Description -->
+            <p class="text-gray-500 mb-5 text-base leading-relaxed">
+              Profitez d'un bon dîner avec les meilleurs plats du restaurant et
+              améliorez votre journée.
+            </p>
+
+            <!-- Status Legend -->
+            <div class="flex gap-6 mb-6">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                <span class="text-sm">Disponible</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                <span class="text-sm">Occupée</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 bg-orange-500 rounded-full"></div>
+                <span class="text-sm">Réservée</span>
+              </div>
+            </div>
+
+            <!-- Table Grid -->
+            <div class="grid grid-cols-3 gap-4">
+              <!-- Table 1 - Available -->
+              <div
+                class="bg-white rounded-2xl p-5 text-center cursor-pointer hover:shadow-lg transition-shadow table-card"
+                data-table="1"
+                data-status="available"
+              >
+                <div
+                  class="w-3 h-3 bg-green-500 rounded-full mx-auto mb-2"
+                ></div>
+                <div class="text-4xl font-bold mb-1">1</div>
+                <div class="text-sm text-gray-500">1 places</div>
+              </div>
+
+              <!-- Table 2 - Occupied -->
+              <div
+                class="bg-gray-50 rounded-2xl p-5 text-center cursor-not-allowed table-card"
+                data-table="2"
+                data-status="occupied"
+              >
+                <div
+                  class="w-3 h-3 bg-gray-400 rounded-full mx-auto mb-2"
+                ></div>
+                <div class="text-4xl font-bold mb-1 text-gray-400">2</div>
+                <div class="text-sm text-gray-400">2 places</div>
+              </div>
+
+              <!-- Table 3 - Available -->
+              <div
+                class="bg-white rounded-2xl p-5 text-center cursor-pointer hover:shadow-lg transition-shadow table-card"
+                data-table="3"
+                data-status="available"
+              >
+                <div
+                  class="w-3 h-3 bg-green-500 rounded-full mx-auto mb-2"
+                ></div>
+                <div class="text-4xl font-bold mb-1">3</div>
+                <div class="text-sm text-gray-500">5 places</div>
+              </div>
+
+              <!-- Table 4 - Reserved -->
+              <div
+                class="bg-white rounded-2xl p-5 text-center cursor-not-allowed table-card"
+                data-table="4"
+                data-status="reserved"
+              >
+                <div
+                  class="w-3 h-3 bg-orange-500 rounded-full mx-auto mb-2"
+                ></div>
+                <div class="text-4xl font-bold mb-1">4</div>
+                <div class="text-sm text-gray-500">4 places</div>
+              </div>
+
+              <!-- Table 5 - Available -->
+              <div
+                class="bg-white rounded-2xl p-5 text-center cursor-pointer hover:shadow-lg transition-shadow table-card"
+                data-table="5"
+                data-status="available"
+              >
+                <div
+                  class="w-3 h-3 bg-green-500 rounded-full mx-auto mb-2"
+                ></div>
+                <div class="text-4xl font-bold mb-1">5</div>
+                <div class="text-sm text-gray-500">5 places</div>
+              </div>
+
+              <!-- Table 6 - Available -->
+              <div
+                class="bg-white rounded-2xl p-5 text-center cursor-pointer hover:shadow-lg transition-shadow table-card"
+                data-table="6"
+                data-status="available"
+              >
+                <div
+                  class="w-3 h-3 bg-green-500 rounded-full mx-auto mb-2"
+                ></div>
+                <div class="text-4xl font-bold mb-1">6</div>
+                <div class="text-sm text-gray-500">8 places</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Section - Reservation Form -->
+          <div
+            class="bg-white rounded-3xl p-8 shadow-lg flex flex-col h-full max-h-[calc(100vh-10rem)]"
+          >
+            <h2 class="text-3xl font-bold text-center mb-6">
+              Informations de réservation
+            </h2>
+
+            <form
+              id="reservation-form"
+              class="flex-1 flex flex-col space-y-4 overflow-y-auto"
+            >
+              <!-- Nom complet -->
+              <div>
+                <label class="block text-sm font-medium mb-2"
+                  >Nom complet</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Entrez votre nom"
+                  class="w-full px-4 py-3 text-base border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-300"
+                />
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label class="block text-sm font-medium mb-2">Email</label>
+                <input
+                  label="email"
+                  type="email"
+                  id="email"
+                  placeholder="votre@email.com"
+                  class="w-full px-4 py-3 text-base border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-300"
+                />
+              </div>
+
+              <!-- Téléphone -->
+              <div>
+                <label class="block text-sm font-medium mb-2">Téléphone</label>
+                <input
+                  label="telephone"
+                  type="tel"
+                  id="phone"
+                  placeholder="07-00-00-00-00"
+                  class="w-full px-4 py-3 text-base border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-300"
+                />
+              </div>
+
+              <!-- Date and Time -->
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium mb-2">Date</label>
+                  <input
+                    type="date"
+                    id="date"
+                    value="2026-02-10"
+                    class="w-full px-4 py-3 text-base border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium mb-2">Heure</label>
+                  <input
+                    type="time"
+                    id="time"
+                    value="19:00"
+                    class="w-full px-4 py-3 text-base border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  />
+                </div>
+              </div>
+
+              <!-- Number of Guests -->
+              <div>
+                <label class="block text-sm font-medium mb-2"
+                  >Nombre de personnes</label
+                >
+                <div
+                  class="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-3"
+                >
+                  <button
+                    type="button"
+                    id="decrease-guests"
+                    class="w-10 h-10 flex items-center justify-center bg-white rounded-full text-gray-600 hover:bg-gray-100 transition-colors"
+                  >
+                    <span class="text-xl">−</span>
+                  </button>
+                  <span id="guest-count" class="text-base font-medium"
+                    >4 personnes</span
+                  >
+                  <button
+                    type="button"
+                    id="increase-guests"
+                    class="w-10 h-10 flex items-center justify-center bg-[#c17a4a] rounded-full text-white hover:bg-[#a66940] transition-colors"
+                  >
+                    <span class="text-xl">+</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                class="w-full bg-[#c17a4a] text-white py-3.5 rounded-xl font-medium text-lg hover:bg-[#a66940] transition-colors flex items-center justify-center gap-2 mt-auto"
+              >
+                Réserver maintenant
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <rect
+                    x="3"
+                    y="4"
+                    width="18"
+                    height="18"
+                    rx="2"
+                    ry="2"
+                    stroke-width="2"
+                  ></rect>
+                  <line x1="16" y1="2" x2="16" y2="6" stroke-width="2"></line>
+                  <line x1="8" y1="2" x2="8" y2="6" stroke-width="2"></line>
+                  <line x1="3" y1="10" x2="21" y2="10" stroke-width="2"></line>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

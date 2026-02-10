@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #fff5f0;
+  --color-secondary: #ffd4b8;
+}
+
+@layer utilities {
+  @keyframes slide-fade-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Classe utilitaire pour appliquer l'animation */
+  .animate-slide-fade-in-right {
+    animation: slide-fade-in-right 1s ease-out forwards;
+  }
+
+  @keyframes slide-fade-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%); 
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-fade-in-left {
+    animation: slide-fade-in-left 1s ease-out forwards;
+  }
+}
